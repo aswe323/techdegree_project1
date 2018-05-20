@@ -2,15 +2,15 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 
 
-//array of Quotes                                                                                     when was it published
+//array of Quotes
 var quotes = [{quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage"
               ,source: "Lao Tzu",citation: "", year: 0},
 
               {quote: "Success is not final; failure is not fatal: It is the courage to continue that counts."
-              ,source: "Winston S. Churchill",citation: "where was it published", year: 0},
+              ,source: "Winston S. Churchill",citation: "", year: 0},
 
               {quote: "Deal with the faults of others as gently as your own."
-              ,source: "Chinese Proverb",citation: "where was it published", year: 0},
+              ,source: "Chinese Proverb",citation: "", year: 0},
 
               {quote: "blank never loses."
               ,source: "Sora and Shiro(aka:blank)",citation: "No Game No Life", year: 2014},
@@ -29,10 +29,15 @@ var quotes = [{quote: "Being deeply loved by someone gives you strength, while l
 
 
 //select a random qoute object from the array named"quoates"(how original...)
-function
+function getRandomQuote ()
+{};
+//return a random numver form 0 to max index value quotes array
+function arrayScaleableNumber ()
+{var randomNumber = Math.floor(Math.randomNumber() * (quotes.length - 0 + 1) + 0)};
+/*PROBLEMS:will never give the max number of the arrey. could be solved by usingh
+          (random_number + 0.1) * maxNumber - (0.1 * maxNumber)
 
-
-
+*/
 
 
 
