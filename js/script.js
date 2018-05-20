@@ -25,10 +25,11 @@ var quotes = [{quote: "Being deeply loved by someone gives you strength, while l
               ,source: "Deckard Cain",citation: "Diablo II", year: 0},
 
               {quote: "The ending isn’t any more important than any of the moments leading to it"
-              ,source: "Dr Rosalene",citation: "To The Moon", year: 0}]; 
+              ,source: "Dr Rosalene",citation: "To The Moon", year: 0}];
 
 
-
+//select a random qoute object from the array named"quoates"(how original...)
+function
 
 
 
