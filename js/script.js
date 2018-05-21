@@ -1,30 +1,33 @@
 
-
+/*
+GENERAL UNDESIRED ISSUES:
+when the arrayScaleableNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
+*/
 
 //array of Quotes
 var quotes = [{quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage"
-              ,source: "Lao Tzu",citation: "", year: 0},
+              ,source: "Lao Tzu",citation: ""},
 
               {quote: "Success is not final; failure is not fatal: It is the courage to continue that counts."
-              ,source: "Winston S. Churchill",citation: "", year: 0},
+              ,source: "Winston S. Churchill",citation: "" },
 
               {quote: "Deal with the faults of others as gently as your own."
-              ,source: "Chinese Proverb",citation: "", year: 0},
+              ,source: "Chinese Proverb",citation: "" },
 
               {quote: "blank never loses."
               ,source: "Sora and Shiro(aka:blank)",citation: "No Game No Life", year: 2014},
 
               {quote: "We all make choices in life, but in the end our choices make us."
-              ,source: "Andrew Ryan",citation: "Bioshock", year: 0},
+              ,source: "Andrew Ryan",citation: "Bioshock",},
 
               {quote: "Nothing is true, everything is permitted"
-              ,source: "Ezio Auditore",citation: "Assassin’s Creed 2", year: 0},
+              ,source: "Ezio Auditore",citation: "Assassin’s Creed 2"},
 
               {quote: "Stay awhile, and listen"
-              ,source: "Deckard Cain",citation: "Diablo II", year: 0},
+              ,source: "Deckard Cain",citation: "Diablo II" },
 
               {quote: "The ending isn’t any more important than any of the moments leading to it"
-              ,source: "Dr Rosalene",citation: "To The Moon", year: 0}];
+              ,source: "Dr Rosalene",citation: "To The Moon"}];
 
 
 
@@ -55,11 +58,11 @@ function printQuote()
 
     var rawHTML = rawHTMLquote + rawHTMLsource;
 
-    if (chosenQuote.citation !=="")
+    if (chosenQuote.hasOwnProperty("citation"))
     {var rawHTMLcitation = '  <span class="citation">' + chosenQuote.citation +  '</span>';
       rawHTML = rawHTML + rawHTMLcitation;};
 
-    if(chosenQuote.year !==0)
+    if(chosenQuote.hasOwnProperty("year"))
     {var rawHTMLyear = '<span class="year"> '+ chosenQuote.year +' </span>';
      rawHTML = rawHTML +  rawHTMLyear;};
      return quoteBox.innerHTML = rawHTML  + "</p>";}
