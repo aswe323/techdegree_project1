@@ -28,16 +28,29 @@ var quotes = [{quote: "Being deeply loved by someone gives you strength, while l
               ,source: "Dr Rosalene",citation: "To The Moon", year: 0}];
 
 
-//select a random qoute object from the array named"quoates"(how original...)
-function getRandomQuote ()
-{};
-//return a random numver form 0 to max index value quotes array
-function arrayScaleableNumber ()
-{var randomNumber = Math.floor(Math.randomNumber() * (quotes.length - 0 + 1) + 0)};
-/*PROBLEMS:will never give the max number of the arrey. could be solved by usingh
-          (random_number + 0.1) * maxNumber - (0.1 * maxNumber)
 
+
+              //return a random numver form 0 to max index value quotes array
+function arrayScaleableNumber ()
+  {var randomNumber = Math.floor((Math.random() + 1)  * (quotes.length - 0) - (1 * quotes.length))
+  return randomNumber};
+/*[SOLVED]
+PROBLEMS:will never give the max number of the arrey. could be solved by usingh
+(random_number + 0.1) * maxNumber - (0.1 * maxNumber)
 */
+
+
+
+
+              //select a random qoute object from the array named"quoates"(how original...)
+function getRandomQuote ()
+  {var quoteObject = quotes[arrayScaleableNumber()]
+  return quoteObject;};
+alert(getRandomQuote());
+
+//should make a template of the raw HTML into a variable. IMPORTENT: pay attention to propettys that MIGHT or MIGHT NOT be relevent  
+function (printQuote)
+{};
 
 
 
