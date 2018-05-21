@@ -1,39 +1,39 @@
 
 /*
 GENERAL UNDESIRED ISSUES:
-when the arrayScaleableNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
+when the ScaleableNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
 */
 
 //array of Quotes
 var quotes = [{quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage"
-              ,source: "Lao Tzu",citation: ""},
+              ,source: "Lao Tzu", awesomeScale:"Awesome Scale:5/10"},
 
               {quote: "Success is not final; failure is not fatal: It is the courage to continue that counts."
-              ,source: "Winston S. Churchill",citation: "" },
+              ,source: "Winston S. Churchill", awesomeScale:"Awesome Scale:8/10" },
 
               {quote: "Deal with the faults of others as gently as your own."
-              ,source: "Chinese Proverb",citation: "" },
+              ,source: "Chinese Proverb", awesomeScale:"Awesome Scale:9/10" },
 
               {quote: "blank never loses."
-              ,source: "Sora and Shiro(aka:blank)",citation: "No Game No Life", year: 2014},
+              ,source: "Sora and Shiro(aka:blank)",citation: "No Game No Life", year: 2014, awesomeScale:"Awesome Scale:11/10"},
 
               {quote: "We all make choices in life, but in the end our choices make us."
-              ,source: "Andrew Ryan",citation: "Bioshock",},
+              ,source: "Andrew Ryan",citation: "Bioshock", awesomeScale:"Awesome Scale:6/10"},
 
               {quote: "Nothing is true, everything is permitted"
-              ,source: "Ezio Auditore",citation: "Assassin’s Creed 2"},
+              ,source: "Ezio Auditore",citation: "Assassin’s Creed 2", awesomeScale:"Awesome Scale:9/10"},
 
               {quote: "Stay awhile, and listen"
-              ,source: "Deckard Cain",citation: "Diablo II" },
+              ,source: "Deckard Cain",citation: "Diablo II", awesomeScale:"Awesome Scale:7/10" },
 
               {quote: "The ending isn’t any more important than any of the moments leading to it"
-              ,source: "Dr Rosalene",citation: "To The Moon"}];
+              ,source: "Dr Rosalene",citation: "To The Moon", awesomeScale:"Awesome Scale:10/10"}];
 
 
 
 
               //return a random numver form 0 to max index value quotes array
-function arrayScaleableNumber ()
+function ScaleableNumber ()
   {var randomNumber = Math.floor((Math.random() + 1)  * (quotes.length - 0) - (1 * quotes.length))
   return randomNumber};
 /*[SOLVED]
@@ -43,10 +43,18 @@ PROBLEMS:will never give the max number of the arrey. could be solved by usingh
 
               //select a random qoute object from the array named"quoates"(how original...)
 function getRandomQuote ()
-  {var quoteObject = quotes[arrayScaleableNumber()]
+  {var quoteObject = quotes[ScaleableNumber()]
   return quoteObject;};
 
-              //should make a template of the raw HTML into a variable. IMPORTENT: pay attention to propertys that MIGHT or MIGHT NOT be relevent
+//random color for every refresh.
+/*function randomColorNumber()
+{     myElement.style.setProperty('background-color',  )};
+*/
+
+
+
+
+              //should mak the raw HTML into a variable. IMPORTENT: pay attention to propertys that MIGHT or MIGHT NOT be relevent
 function printQuote()
    {var chosenQuote = getRandomQuote();
 
@@ -65,6 +73,11 @@ function printQuote()
     if(chosenQuote.hasOwnProperty("year"))
     {var rawHTMLyear = '<span class="year"> '+ chosenQuote.year +' </span>';
      rawHTML = rawHTML +  rawHTMLyear;};
+
+     if (chosenQuote.hasOwnProperty("awesomeScale"))
+     {var rawHTMLawesomeScale = '  <span class="citation">' + chosenQuote.awesomeScale +  '</span>';
+       rawHTML = rawHTML + rawHTMLawesomeScale;};
+
      return quoteBox.innerHTML = rawHTML  + "</p>";}
 /*INCOUNTERED PROBLENMS:
   when declaring rawHTML at the top of the function. the program tought i was tryng to add two numebrs together.[SOLVED]
