@@ -1,5 +1,4 @@
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
+
 
 
 //array of Quotes
@@ -39,20 +38,37 @@ PROBLEMS:will never give the max number of the arrey. could be solved by usingh
 (random_number + 0.1) * maxNumber - (0.1 * maxNumber)
 */
 
-
-
-
               //select a random qoute object from the array named"quoates"(how original...)
 function getRandomQuote ()
   {var quoteObject = quotes[arrayScaleableNumber()]
   return quoteObject;};
-alert(getRandomQuote());
 
-//should make a template of the raw HTML into a variable. IMPORTENT: pay attention to propettys that MIGHT or MIGHT NOT be relevent  
-function (printQuote)
-{};
+              //should make a template of the raw HTML into a variable. IMPORTENT: pay attention to propertys that MIGHT or MIGHT NOT be relevent
+function printQuote()
+   {var chosenQuote = getRandomQuote();
+
+     var quoteBox = document.getElementById('quote-box')
+
+    var rawHTMLquote =  '<p class="quote"> ' +  chosenQuote.quote +  ' </p>';
+
+    var rawHTMLsource = '<p class="source"> ' + chosenQuote.source;
+
+    var rawHTML = rawHTMLquote + rawHTMLsource;
+
+    if (chosenQuote.citation !=="")
+    {var rawHTMLcitation = '  <span class="citation">' + chosenQuote.citation +  '</span>';
+      rawHTML = rawHTML + rawHTMLcitation;};
+
+    if(chosenQuote.year !==0)
+    {var rawHTMLyear = '<span class="year"> '+ chosenQuote.year +' </span>';
+     rawHTML = rawHTML +  rawHTMLyear;};
+     return quoteBox.innerHTML = rawHTML  + "</p>";}
+/*INCOUNTERED PROBLENMS:
+  when declaring rawHTML at the top of the function. the program tought i was tryng to add two numebrs together.[SOLVED]
+  when doing a rawHTML+=[string variable]; the program tought i was trying to add numbers.[SOLVED]
+*/
 
 
-
-
+// event listener to respond to "Show another quote" button clicks
+// when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
