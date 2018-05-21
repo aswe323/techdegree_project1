@@ -1,7 +1,8 @@
 
 /*
 GENERAL UNDESIRED ISSUES:
-when the ScaleableNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
+when the scaleAbleRandomNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
+NOTES:  changed <body> to <body id="body"> so i can till use getElementById :P
 */
 
 //array of Quotes
@@ -32,9 +33,9 @@ var quotes = [{quote: "Being deeply loved by someone gives you strength, while l
 
 
 
-              //return a random numver form 0 to max index value quotes array
-function ScaleableNumber ()
-  {var randomNumber = Math.floor((Math.random() + 1)  * (quotes.length - 0) - (1 * quotes.length))
+              //return a random number form 0 to scaleMax value
+function scaleAbleRandomNumber (scaleMax)
+  {var randomNumber = Math.floor((Math.random() + 1)  * (scaleMax - 0) - (1 * scaleMax))
   return randomNumber};
 /*[SOLVED]
 PROBLEMS:will never give the max number of the arrey. could be solved by usingh
@@ -43,12 +44,16 @@ PROBLEMS:will never give the max number of the arrey. could be solved by usingh
 
               //select a random qoute object from the array named"quoates"(how original...)
 function getRandomQuote ()
-  {var quoteObject = quotes[ScaleableNumber()]
+  {var quoteObject = quotes[scaleAbleRandomNumber(quotes.length)]
   return quoteObject;};
 
 //random color for every refresh.
-/*function randomColorNumber()
-{     myElement.style.setProperty('background-color',  )};
+function changeColorBackround()
+  {var body = document.getElementById("body");
+   var cssAccess = body.style.backgroundColor = 'rgb(' + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255)+ ")";
+   return cssAccess;};
+/*PROBLEMS
+  for some reason. a warning appers that says body is null.[UNSOLVED cause it works and im lazy :P]
 */
 
 
@@ -78,13 +83,16 @@ function printQuote()
      {var rawHTMLawesomeScale = '  <span class="citation">' + chosenQuote.awesomeScale +  '</span>';
        rawHTML = rawHTML + rawHTMLawesomeScale;};
 
+     changeColorBackround();
      return quoteBox.innerHTML = rawHTML  + "</p>";}
 /*INCOUNTERED PROBLENMS:
   when declaring rawHTML at the top of the function. the program tought i was tryng to add two numebrs together.[SOLVED]
   when doing a rawHTML+=[string variable]; the program tought i was trying to add numbers.[SOLVED]
 */
 
-
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+//interval timelyChange the quote
+setInterval(function(){printQuote();}, 5000);
