@@ -41,7 +41,7 @@ var quotes = [
 		quote: "We all make choices in life, but in the end our choices make us.",
 		source: "Andrew Ryan",
 		citation: "Bioshock", 
-		awesomeScale:"Awesome Scale:6/10"'
+		awesomeScale:"Awesome Scale:6/10"
 	},
 
         {
@@ -147,7 +147,7 @@ function printQuote(){
 
      changeColorBackround();
      return quoteBox.innerHTML = rawHTML  + "</p>";
-}
+};
 /*INCOUNTERED PROBLENMS:
   when declaring rawHTML at the top of the function. the program tought i was tryng to add two numebrs together.[SOLVED]
   when doing a rawHTML+=[string variable]; the program tought i was trying to add numbers.[SOLVED]
@@ -161,5 +161,5 @@ function printQuote(){
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 //interval timelyChange the quote
-setInterval(printQuote(); 5000);
+setInterval(function(){printQuote();}, 5000);
 
