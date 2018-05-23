@@ -6,29 +6,67 @@ NOTES:  changed <body> to <body id="body"> so i can till use getElementById :P
 */
 
 //array of Quotes
-var quotes = [{quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage"
-              ,source: "Lao Tzu", awesomeScale:"Awesome Scale:5/10"},
+var quotes = [
+	{
+		quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage",
+		source: "Lao Tzu", 
+	        awesomeScale:"Awesome Scale:5/10"
+	},
 
-              {quote: "Success is not final; failure is not fatal: It is the courage to continue that counts."
-              ,source: "Winston S. Churchill", awesomeScale:"Awesome Scale:8/10" },
+              
+	{
+		quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+		source: "Winston S. Churchill", 
+		awesomeScale:"Awesome Scale:8/10" 
+	},
 
-              {quote: "Deal with the faults of others as gently as your own."
-              ,source: "Chinese Proverb", awesomeScale:"Awesome Scale:9/10" },
+              
+	{
+		quote: "Deal with the faults of others as gently as your own.",
+		source: "Chinese Proverb", 
+		awesomeScale:"Awesome Scale:9/10" 
+	},
 
-              {quote: "blank never loses."
-              ,source: "Sora and Shiro(aka:blank)",citation: "No Game No Life", year: 2014, awesomeScale:"Awesome Scale:11/10"},
+              
+	{
+		quote: "blank never loses.",
+		source: "Sora and Shiro(aka:blank)",
+		citation: "No Game No Life", 
+		year: 2014, 
+		awesomeScale:"Awesome Scale:11/10"
+	},
 
-              {quote: "We all make choices in life, but in the end our choices make us."
-              ,source: "Andrew Ryan",citation: "Bioshock", awesomeScale:"Awesome Scale:6/10"},
+              
+	{
+		quote: "We all make choices in life, but in the end our choices make us.",
+		source: "Andrew Ryan",
+		citation: "Bioshock", 
+		awesomeScale:"Awesome Scale:6/10"'
+	},
 
-              {quote: "Nothing is true, everything is permitted"
-              ,source: "Ezio Auditore",citation: "Assassin’s Creed 2", awesomeScale:"Awesome Scale:9/10"},
+        {
+		quote: "Nothing is true, everything is permitted" ,
+		source: "Ezio Auditore",
+		citation: "Assassin’s Creed 2", 
+		awesomeScale:"Awesome Scale:9/10"
+	},
 
-              {quote: "Stay awhile, and listen"
-              ,source: "Deckard Cain",citation: "Diablo II", awesomeScale:"Awesome Scale:7/10" },
+              
+	{
+		quote: "Stay awhile, and listen",
+		source: "Deckard Cain",
+		citation: "Diablo II", 
+		awesomeScale:"Awesome Scale:7/10" 
+	},
 
-              {quote: "The ending isn’t any more important than any of the moments leading to it"
-              ,source: "Dr Rosalene",citation: "To The Moon", awesomeScale:"Awesome Scale:10/10"}];
+              
+	{
+		quote: "The ending isn’t any more important than any of the moments leading to it",
+		source: "Dr Rosalene",
+		citation: "To The Moon", 
+		awesomeScale:"Awesome Scale:10/10"
+	}
+];
 
 
 
