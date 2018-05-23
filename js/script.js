@@ -1,4 +1,4 @@
-
+var lastNumber;
 /*
 GENERAL UNDESIRED ISSUES:
 when the scaleAbleRandomNumber is called. it might return the same number. meaning the same quote will appear twice[NOT SOLVED DUE TO...umm... reasons.]
@@ -71,9 +71,12 @@ var quotes = [
 
 
 
-              //return a random number form 0 to scaleMax value
+              //return a random number form 0 to scaleMax value also checks to see if the last number used by the printQuote ist he same. if is. then reroll :D 
 function scaleAbleRandomNumber (scaleMax){
    var randomNumber = Math.floor((Math.random() + 1)  * (scaleMax - 0) - (1 * scaleMax))
+	if (lastNumber === randomNumber){
+		randomNumber(scaleMax);
+	};
    return randomNumber
 };
 
@@ -91,7 +94,8 @@ PROBLEMS:will never give the max number of the arrey. could be solved by usingh
 
               //select a random qoute object from the array named"quoates"(how original...)
 function getRandomQuote (){
-   var quoteObject = quotes[scaleAbleRandomNumber(quotes.length)]
+	var lastRandom = scaleAbleRandomNumber(quotes.length);
+   var quoteObject = quotes[lastRandom];
    return quoteObject;
 };
 
@@ -102,9 +106,9 @@ function getRandomQuote (){
 
 //random color for every refresh.
 function changeColorBackround(){
-	  var body = document.getElementById("body");
-   var cssAccess = body.style.backgroundColor = 'rgb(' + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255)+ ")";
-   return cssAccess;
+    var body = document.getElementById("body");
+    var cssAccess = body.style.backgroundColor = 'rgb(' + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255) + "," + scaleAbleRandomNumber(255)+ ")";
+    return cssAccess;
 };
 
 /*PROBLEMS
@@ -116,6 +120,7 @@ function changeColorBackround(){
 
               //should mak the raw HTML into a variable. IMPORTENT: pay attention to propertys that MIGHT or MIGHT NOT be relevent
 function printQuote(){
+   clearInterval(intervalID); 
     var chosenQuote = getRandomQuote();
 
     var quoteBox = document.getElementById('quote-box')
@@ -161,5 +166,5 @@ function printQuote(){
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 //interval timelyChange the quote
-setInterval(function(){printQuote();}, 5000);
+var intervalID = setInterval(function(){printQuote();}, 5000);
 
